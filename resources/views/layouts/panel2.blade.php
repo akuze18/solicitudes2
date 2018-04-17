@@ -1,4 +1,4 @@
-<?php $headers = define_menu(); ?>
+<?php $headers = define_menu();?>
 <div class="panel-group" id="accordion">
     <div class="panel panel-default">
         @foreach($headers as $header)

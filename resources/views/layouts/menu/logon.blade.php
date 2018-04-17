@@ -2,7 +2,7 @@
 <div id="navbar" class="navbar-collapse collapse">
     <ul class="nav navbar-nav">
 
-        <li @if(Route::getCurrentRoute()->getPath()=='/') class="active" @endif><a href="{{route('home')}}">Inicio</a></li>
+        <li ><a href="">Inicio</a></li>
         <!--<li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Solicitudes GP <span class="caret"></span></a>
             <ul class="dropdown-menu">
