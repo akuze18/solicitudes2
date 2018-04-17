@@ -16,3 +16,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('getAction','SolicitudeController@getAction')->name('getAction');
+Route::post('getApprobationStatus','SolicitudeController@getApprobationStatus')->name('getApprobationStatus');
+Route::post('getAreaSname','AreaController@getAreaSname')->name('getAreaSname');
+Route::post('getFormatList','SolicitudeTypeController@getFormatList')->name('getFormatList');
