@@ -24,12 +24,12 @@
                     <div class="col-lg-3"><span class="badge badge-inverse">{{$menu->header}}</span></div>
                     <div class="col-lg-5">{{ $menu->contain }}</div>
                     <div class="col-lg-4 botonera">
-                    @permission('see.menu')
+                    @can('see.menu')
                         <a href="{{route('menu',[$menu->id])}}" class="btn btn-info btn-xs">{{trans('labels.seeDetail')}}</a>
-                    @endpermission
-                    @permission('edit.menus')
+                    @endcan
+                    @can('edit.menus')
                         <a href="{{route('menu.edit',[$menu->id])}}" class="btn btn-warning btn-xs">{{trans('labels.edit')}}</a>
-                    @endpermission
+                    @endcan
                     </div>
                 </td>
             </tr>

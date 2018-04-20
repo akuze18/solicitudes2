@@ -5,11 +5,11 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=5.6.4",
+        "php": ">=7.0",
         "bosnadev/repositories": " 0.*",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
-        "spatie/laravel-permission": "^1.16",
+        "spatie/laravel-permission": "^2.4",
         "webpatser/laravel-uuid": "2.*"
     },
     "require-dev": {

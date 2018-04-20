@@ -12,7 +12,6 @@ use App\Http\Controllers\Controller;
 use App\Repositories\AreaRepository;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
-use Ultraware\Roles\Models\Role;
 
 class AreaController extends Controller
 {

@@ -20,7 +20,7 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Validator;
-use Ultraware\Roles\Models\Role;
+use Spatie\Permission\Models\Role;
 
 class SolicitudeController extends Controller
 {

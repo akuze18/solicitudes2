@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use App\Repositories\RoleRepository;
-use Ultraware\Roles\Models\Role;
+use Spatie\Permission\Models\Role;
 
 class Area extends MyModel
 {
@@ -37,7 +37,7 @@ class Area extends MyModel
 
     public function Rango($role_slug){
         $rango = new RoleRepository();
-        return $rango->bySlug($role_slug);
+        return $rango->byName($role_slug);
 
     }
 }

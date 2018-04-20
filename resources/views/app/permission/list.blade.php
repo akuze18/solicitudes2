@@ -15,14 +15,14 @@
             <tr class="">
                 <td>{{ $permission->name }} <span class="badge">{{$permission->roles->count()}} Roles</span></td>
                 <td>
-                    @permission('see.permission')
+                    @can('see.permission')
                     <a href="{{route('permission',[$permission->slug])}}" class="btn btn-info btn-xs">{{trans('labels.seeDetail')}}</a>
-                    @endpermission
+                    @endcan
                 </td>
                 <td>
-                    @permission('edit.permission')
+                    @can('edit.permission')
                     <a href="{{route('permissions.edit',[$permission->slug])}}" class="btn btn-warning btn-xs">{{trans('labels.edit')}}</a>
-                    @endpermission
+                    @endcan
                 </td>
             </tr>
         @endforeach

@@ -30,12 +30,12 @@
                             <table class="botonera" id="opciones_espera">
                                 <tr>
                                     <td>
-                                        @permission('edit.solicitude')
+                                        @can('edit.solicitude')
                                         <a href="{{route('solicitude.edit',[$detail->id])}}" class="btn btn-warning btn-xs">{{trans('labels.edit')}}</a>
-                                        @endpermission
+                                        @endcan
                                     </td>
                                     <td>
-                                        @permission('delete.solicitude')
+                                        @can('delete.solicitude')
                                         <form action="{{route('solicitude.destroy.detail',[$detail->id])}}" method="POST">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
@@ -43,7 +43,7 @@
                                                 <i class="fa fa-btn fa-trash"></i>{{trans('labels.toDelete')}}
                                             </button>
                                         </form>
-                                        @endpermission
+                                        @endcan
                                     </td>
                                 </tr>
                             </table>

@@ -26,17 +26,17 @@
                     <table class="botonera" id="opciones_espera">
                         <tr>
                             <td>
-                                @permission('see.solicitude')
+                                @can('see.solicitude')
                                 <a href="{{route('solicitude',[$estado,$solicitude->id])}}" class="btn btn-info btn-xs">{{trans('labels.seeDetail')}}</a>
-                                @endpermission
+                                @endcan
                             </td>
                             <td>
-                                @permission('create.solicitude')
+                                @can('create.solicitude')
                                 <a href="{{route('solicitude.create',[$solicitude->id])}}" class="btn btn-success btn-xs">{{trans('labels.addNew')}}</a>
-                                @endpermission
+                                @endcan
                             </td>
                             <td>
-                                @permission('delete.solicitude')
+                                @can('delete.solicitude')
                                 <form action="{{route('solicitude.destroy.batch',[$solicitude->id])}}" method="POST">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
@@ -44,10 +44,10 @@
                                         <i class="fa fa-btn fa-trash"></i>{{trans('labels.toDelete')}}
                                     </button>
                                 </form>
-                                @endpermission
+                                @endcan
                             </td>
                             <td>
-                                @permission('edit.solicitude')
+                                @can('edit.solicitude')
                                 <form action="{{route('solicitude.generate',[$solicitude->id])}}" method="POST">
                                     {{ csrf_field() }}
                                     {{ method_field('PUT') }}
@@ -55,7 +55,7 @@
                                         <i class="fa fa-btn fa-trash"></i>{{trans('labels.toSend')}}
                                     </button>
                                 </form>
-                                @endpermission
+                                @endcan
                             </td>
                         </tr>
                     </table>
@@ -64,9 +64,9 @@
                     <table class="botonera" id="opciones_enviado">
                         <tr>
                             <td>
-                                @permission('see.solicitude')
+                                @can('see.solicitude')
                                 <a href="{{route('solicitude',[$estado,$solicitude->id])}}" class="btn btn-info btn-xs">{{trans('labels.seeDetail')}}</a>
-                                @endpermission
+                                @endcan
                             </td>
                         </tr>
                     </table>
@@ -75,9 +75,9 @@
                     <table class="botonera" id="opciones_aprobado">
                         <tr>
                             <td>
-                                @permission('see.solicitude')
+                                @can('see.solicitude')
                                 <a href="{{route('solicitude',[$estado,$solicitude->id])}}" class="btn btn-info btn-xs">{{trans('labels.seeDetail')}}</a>
-                                @endpermission
+                                @endcan
                             </td>
                         </tr>
                     </table>
@@ -86,9 +86,9 @@
                     <table class="botonera" id="opciones_rechazado">
                         <tr>
                             <td>
-                                @permission('see.solicitude')
+                                @can('see.solicitude')
                                 <a href="{{route('solicitude',[$estado,$solicitude->id])}}" class="btn btn-info btn-xs">{{trans('labels.seeDetail')}}</a>
-                                @endpermission
+                                @endcan
                             </td>
                         </tr>
                     </table>
@@ -98,11 +98,11 @@
     @endforeach
     </tbody>
     @if($OEstado->slug=='T')
-        @permission('create.solicitude')
+        @can('create.solicitude')
         <tfoot>
         <tr><td colspan="3"><p></p><a href="{{route('solicitude.create')}}" class="btn btn-success btn-xs">{{trans('labels.add')}}</a></td></tr>
         </tfoot>
-        @endpermission
+        @endcan
     @endif
 </table>
 {!! $mySolicitudes->render() !!}

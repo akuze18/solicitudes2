@@ -18,24 +18,24 @@
                     <div class="col-md-4">
                         <table class="botonera">
                             <tr>
-                                <td>@permission('create.approbation')
+                                <td>@can('create.approbation')
                                     <button type="button" class="btn btn-success btn-xs" data-toggle="modal"
                                             data-target="#modalcambiar"
                                             id="{{$detail->id}}"
                                             name="Accept">{{trans('labels.accept')}}</button>
-                                    @endpermission</td>
-                                <td>@permission('delete.approbation')
+                                    @endcan</td>
+                                <td>@can('delete.approbation')
                                     <button type="button" class="btn btn-danger btn-xs" data-toggle="modal"
                                             data-target="#modalcambiar"
                                             id="{{$detail->id}}"
                                             name="Reject">{{trans('labels.toReject')}}</button>
-                                    @endpermission</td>
-                                <td>@permission('edit.approbation')
+                                    @endcan</td>
+                                <td>@can('edit.approbation')
                                     <button type="button" class="btn btn-warning btn-xs" data-toggle="modal"
                                             data-target="#modalcambiar"
                                             id="{{$detail->id}}"
                                             name="Object">{{trans('labels.toObject')}}</button>
-                                    @endpermission</td>
+                                    @endcan</td>
                             </tr>
                         </table>
                     </div>

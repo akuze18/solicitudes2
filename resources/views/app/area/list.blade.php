@@ -23,23 +23,23 @@
                     {{ $area->name }} <span class="badge">{{trans('titles.role.list').' '.$area->roles->count()}}</span>
                 </span>
                 <span class="col-md-4 botonera">
-                @permission('see.area')
+                @can('see.area')
                     <a href="{{route('area',[$area->name])}}" class="btn btn-info btn-xs">{{trans('labels.seeDetail')}}</a>
-                @endpermission
-                    @permission('edit.area')
+                @endcan
+                    @can('edit.area')
                     <a href="{{route('areas.edit',[$area->name])}}" class="btn btn-warning btn-xs">{{trans('labels.edit')}}</a>
-                @endpermission
-                    @permission('delete.area')
+                @endcan
+                    @can('delete.area')
                         <button type="button" data-toggle="modal" data-target="#modalconfirmar"
                                 data-id="{{ $area->id }}" data-name="{{ $area->name }}" class="btn btn-danger btn-xs">{{trans('labels.toDelete')}}
                         </button>
-                    @endpermission
+                    @endcan
                 </span>
             </td>
         </tr>
     @endforeach
     </tbody>
-    @permission('create.area')
+    @can('create.area')
     <tfoot>
         <tr>
             <td>
@@ -48,7 +48,7 @@
             </td>
         </tr>
     </tfoot>
-    @endpermission
+    @endcan
 </table>
 {!! $areas->render() !!}
     @include('layouts.modal.confirm_delete_area')

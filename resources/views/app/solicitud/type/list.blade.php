@@ -23,12 +23,12 @@
                 <td>
                     <div class="col-lg-8">{{ $type->name }}</div>
                     <div class="col-lg-4 botonera">
-                    @permission('see.menu')
+                    @can('see.menu')
                         <a href="{{route('solicitudeType',[$type->id])}}" class="btn btn-info btn-xs">{{trans('labels.seeDetail')}}</a>
-                    @endpermission
-                    @permission('edit.menu')
+                    @endcan
+                    @can('edit.menu')
                         <a href="{{route('solicitudeType.edit',[$type->id])}}" class="btn btn-warning btn-xs">{{trans('labels.edit')}}</a>
-                    @endpermission
+                    @endcan
 
                     </div>
                 </td>

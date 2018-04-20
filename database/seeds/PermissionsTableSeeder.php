@@ -18,7 +18,7 @@ class PermissionsTableSeeder extends Seeder
         $role = Role::where('name','Admin')->first();
         foreach($models as $model){
             foreach($actions as $action){
-                $name = $action.'.'.$model;
+                $name = strtolower($action.'.'.$model) ;
                 $counter = Permission::where('name',$name)->count();
                 if($counter==0){
                     $newPermission = Permission::create([

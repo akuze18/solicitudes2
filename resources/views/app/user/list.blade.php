@@ -22,20 +22,20 @@
                 <td>{{$user->first_name}}</td>
                 <td>{{$user->last_name}}</td>
                 <td>{{$user->email}}</td>
-                <td>{{$user->roles[0]->name}}</td>
+                <td>{{$user->roles[0]->description}}</td>
                 <td>
-                    @permission('see.user')
+                    @can('see.user')
                     <a href="{{route('user',$user->username)}}" class="btn btn-info btn-xs">{{trans('labels.seeDetail')}}</a>
-                    @endpermission
+                    @endcan
                 </td>
                 <td>
-                    @permission('edit.user')
+                    @can('edit.user')
                     <a href="{{route('users.edit',[$user->username])}}" class="btn btn-warning btn-xs">{{trans('labels.edit')}}</a>
-                    @endpermission
+                    @endcan
                 </td>
                 <td>
-                    @permission('delete.user')
-                    @if(!$user->isAdmin())
+                    @can('delete.user')
+                    @if(!$user->hasRole('admin'))
                     <form action="{{route('users.destroy',[$user->id])}}" method="POST">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
@@ -44,7 +44,7 @@
                         </button>
                     </form>
                     @endif
-                    @endpermission
+                    @endcan
                 </td>
             </tr>
         @endforeach
@@ -52,10 +52,10 @@
         <tfoot>
             <tr>
                 <td colspan="7">
-                    @permission('create.user')
+                    @can('create.user')
                     <p></p>
                     <a href="{{route('users.create')}}" class="btn btn-success btn-xs">{{trans('labels.add')}}</a>
-                    @endpermission
+                    @endcan
                 </td>
             </tr>
         </tfoot>

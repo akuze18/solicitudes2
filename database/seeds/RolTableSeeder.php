@@ -19,7 +19,7 @@ class RolTableSeeder extends Seeder
             'name' => 'admin',
             'description' => 'Administrador',
             'area_id'=>$system_area->id
-        ]);
+        ]);/**/
         //Otros Roles
         $areas = Area::where('name','<>','Sistema')->get();
         foreach($areas as $area){

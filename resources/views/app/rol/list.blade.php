@@ -15,17 +15,17 @@
             <tr>
                 <td>{{ $role->namefull }} <span class="badge">Usuarios {{$role->users->count()}}</span></td>
                 <td>
-                    @permission('see.role')
+                    @can('see.role')
                     <a href="{{route('role',[$role->slug])}}" class="btn btn-info btn-xs">{{trans('labels.seeDetail')}}</a>
-                    @endpermission
+                    @endcan
                 </td>
                 <td>
-                    @permission('edit.role')
+                    @can('edit.role')
                     <a href="{{route('roles.edit',[$role->slug])}}" class="btn btn-warning btn-xs">{{trans('labels.edit')}}</a>
-                    @endpermission
+                    @endcan
                 </td>
                 <td>
-                    @permission('delete.role')
+                    @can('delete.role')
                     <form action="{{route('roles.destroy',[$role->id])}}" method="POST">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
@@ -33,16 +33,16 @@
                             <i class="fa fa-btn fa-trash"></i>{{trans('labels.toDelete')}}
                         </button>
                     </form>
-                    @endpermission
+                    @endcan
                 </td>
             </tr>
         @endforeach
     </tbody>
-    @permission('create.role')
+    @can('create.role')
     <tbody>
         <tr><td><p></p><a href="{{route('roles.create')}}" class="btn btn-success btn-xs">{{trans('labels.add')}}</a></td></tr>
     </tbody>
-    @endpermission
+    @endcan
 </table>
 {!! $roles->render() !!}
 @endsection

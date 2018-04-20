@@ -1,0 +1,84 @@
+.panel-default > .panel-heading-custom {
+    background: #d2d8ff; color: #000000;
+}
+
+.panel-default > .panel-heading-custom  > a{color: #242424;
+
+    text-decoration:none;
+}
+
+.newIn{
+    width: 200px;
+    height: 100px;
+    -moz-border-radius: 0 50% / 0 100%;
+    -webkit-border-radius: 0 50% / 0 100%;
+    border-radius: 0 50% / 0 100%;
+    background: #b1b801;
+    border: 1px solid #555100;
+    padding-right: 12px;
+    padding-left: 12px;
+}
+
+.botonera{
+    text-align: right;
+    /*border: 1px solid #3c763d;*/
+}
+.botonera > a{
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+.botonera tr td {
+    padding-left: 2px;
+    padding-right: 2px;
+
+}
+
+.badge:hover {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+.badge-error {
+    background-color: #b94a48;
+}
+.badge-error:hover {
+    background-color: #953b39;
+}
+.badge-warning {
+    background-color: #f89406;
+}
+.badge-warning:hover {
+    background-color: #c67605;
+}
+.badge-success {
+    background-color: #468847;
+}
+.badge-success:hover {
+    background-color: #356635;
+}
+.badge-info {
+    background-color: #3a87ad;
+}
+.badge-info:hover {
+    background-color: #2d6987;
+}
+.badge-inverse {
+    background-color: #333333;
+}
+.badge-inverse:hover {
+    background-color: #1a1a1a;
+}
+
+
+thead.title-table > tr > th {
+    text-align: center;
+    font-size: 10px;
+}
+tbody> tr > td.alert-min{
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.modal-title{font-weight: bold;}

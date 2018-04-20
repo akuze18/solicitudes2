@@ -22,17 +22,17 @@
                 @if($approbation->Objetado>0)<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>@endif
             </td>
             <td>
-                @permission('see.approbation')
+                @can('see.approbation')
                 <a href="{{route('approbation',[$approbation->batch])}}" class="btn btn-info btn-xs">{{trans('labels.seeDetail')}}</a>
-                @endpermission
+                @endcan
             </td>
             <td>
-                @permission('edit.approbation')
+                @can('edit.approbation')
                 <a href="{{route('approbation',[$approbation->batch])}}" class="btn btn-warning btn-xs">{{trans('labels.addNew')}}</a>
-                @endpermission
+                @endcan
             </td>
             <td>
-                @permission('delete.approbation')
+                @can('delete.approbation')
                 <form action="{{route('approbation',[$approbation->batch])}}" method="POST">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
@@ -40,7 +40,7 @@
                         <i class="fa fa-btn fa-trash"></i>{{trans('labels.toDelete')}}
                     </button>
                 </form>
-                @endpermission
+                @endcan
             </td>
         </tr>
     @endforeach

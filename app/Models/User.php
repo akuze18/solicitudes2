@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'username','rut','first_name', 'last_name', 'email', 'password','rol_id'
     ];
 
     /**
@@ -27,4 +27,28 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function getNameAttribute(){
+        return $this->first_name.' '.$this->last_name;
+    }
+
+    public function getRutStyleAttribute(){
+        $rutA = str_split($this->rut);
+        $maxL = count($rutA)-1;
+        $full = '';
+        for($i=$maxL;$i>=0;$i--){
+            $full = $rutA[$i]. $full;
+            if(($maxL-$i)==0){
+                $full = '-'. $full;
+            }
+            elseif(($maxL-$i)%3==0 and $i!=0){
+                $full = '.'. $full;
+            }
+        }
+        return $full;
+    }
+
+    public function solicitudes(){
+        return $this->hasMany(solicitudBatch::class);
+    }
 }
