@@ -5,7 +5,7 @@
             @if(is_null($eVal))<option selected disabled></option>@endif
             @foreach($elements as $element)
                 <option value="{{$element->id}}" @if($eVal==$element->id) selected @endif
-                @if (Input::old($eName) == $element->id) selected @endif>{{$element->namefull}}</option>
+                @if (Request::old($eName) == $element->id) selected @endif>{{$element->namefull}}</option>
             @endforeach
         </select>
         @if ($errors->has($eName))

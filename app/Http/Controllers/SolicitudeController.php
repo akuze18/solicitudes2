@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Approbation;
 use App\Models\ApprobationAction;
-use App\Models\ApprobationFormat;
 use App\Models\Estado;
 use App\Models\FormatList;
 use App\Repositories\EstadoRepository;

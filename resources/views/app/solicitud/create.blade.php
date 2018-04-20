@@ -23,10 +23,21 @@
             $("#solType_id").change(function () {
                 $("#solType_id option:selected").each(function () {
                     var id_category = $(this).val();
-                    $.post("{{route('getAction')}}",{typeSol: id_category}, function(data){
+                    //var token ="{{(Auth::user()->remember_token) }}";
+                    $.ajax({
+                        /*headers: {
+                            'Authorization':'Bearer ' + token
+                        },*/
+                        method: "POST",
+                        url: "{{route('getAction')}}",
+                        data: {"typeSol": id_category}
+
+                    }).done( function(data){
                         $("#action").html(data);
                         $(".dynamic_field").html('');
                     });
+
+
                 });
             }).trigger('change');
         });
